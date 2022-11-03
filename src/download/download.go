@@ -89,11 +89,9 @@ func StartDownload() error {
 	for range urls {
 		fileName := <-ch
 
-		files, err := unzip.Unzip(fileName, config.DownloadFolder)
+		_, err := unzip.Unzip(fileName, config.DownloadFolder)
 		if err != nil {
 			log.Fatal(err)
-		} else {
-			fmt.Println(files)
 		}
 
 	}

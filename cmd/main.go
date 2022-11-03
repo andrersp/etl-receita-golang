@@ -7,6 +7,7 @@ import (
 	"sync"
 
 	"github.com/andrersp/go-etl-receita-federal/src/config"
+	"github.com/andrersp/go-etl-receita-federal/src/download"
 	"github.com/andrersp/go-etl-receita-federal/src/extract"
 )
 
@@ -28,7 +29,7 @@ func main() {
 	}
 	var wg sync.WaitGroup
 
-	// download.StartDownload()
+	download.StartDownload()
 
 	for _, file := range config.FilesToFind {
 		files := ListFiles(file)
